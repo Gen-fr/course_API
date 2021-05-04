@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Edit course</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Course Editor</h1>
+    <div class="form">
+
+        <form action="/edit/{{course.id}}" method="POST">
+            <input type="text" name="name" id="name" value="{{course.name}}">
+            <input type="text" name="description" id="description" value="{{course.description}}">
+            <input type="date" name="start" id="start" value="{{course.start_date}}">
+            <input type="date" name="end" id="end" value="{{course.end_date}}">
+            <input type="text" name="hours" id="hours" value="{{course.hours}}" size = 4>
+            <input type="submit" value="Update">
+        </form>
+    </div>    
+
+</div>
+{% endblock %}

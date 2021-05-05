@@ -10,7 +10,6 @@
 
     <form action="/" method="POST">
         <input type="text" name="name" id="name" placeholder=name>
-        <input type="text" name="description" id="description"placeholder="description">
         <input type="date" name="start" id="start" >
         <input type="date" name="end" id="end">
         <input type="text" name="hours" id="hours" placeholder="hours" size = 4>
@@ -22,8 +21,6 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <!-- <th>Discription</th>
-            <th>Date</th> -->
             <th>Hours</th>
             <th>Action</th>
         </tr>
@@ -31,24 +28,15 @@
         {% for course in courses %}
         <tr> 
             <td>{{course.id}}</td>
-            <td>{{course.name}}</td>
-            <!-- <td>{{course.description}}</td>
             <td>
-                <p>{{course.start_date}}</p>
-                <p>{{course.end_date}}</p>
-            </td> -->
+                <a href="/courses/<int:id>"></a>{{course.name}}</td>
             <td>{{course.hours}}</td>
-            
             <td>
-                <a href="/delete/{{course.id}}">Delete</a>
-                <br>
                 <a href="/edit/{{course.id}}">Edit</a>
             </td>
         </tr>
         {% endfor%}
     </table>
-
-    
 
 </div>
 {% endblock %}
